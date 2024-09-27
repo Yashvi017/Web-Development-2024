@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Verification</title>
+    <style>
+        .ver_code{
+            border:1px solid #e5e5e5;
+            width: 20px;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="reset_pass.html" method="post">
+        <h1 align="center">Verify Code</h1>
+        <table cellpadding="10" align="center">
+            <tr align="center">
+                <td>Code :</td>
+                <td>
+                    <input class="ver_code" type="text" name="code1" required placeholder="-">
+                </td>
+                <td>
+                    <input class="ver_code" type="text" name="code2" required placeholder="-">
+                </td>
+                <td>
+                    <input class="ver_code" type="text" name="code3" required placeholder="-">
+                </td>
+                <td>
+                    <input class="ver_code" type="text" name="code4" required placeholder="-">
+                </td>
+                <td>
+                    <input class="ver_code" type="text" name="code5" required placeholder="-">
+                </td>
+                <td>
+                    <input class="ver_code" type="text"  name="code6" required placeholder="-">
+                </td>
+                
+            </tr>
+            <tr>
+                <td colspan="7" align="center">
+                    <input type="submit" name="submit" value="Submit">
+                    <input type="reset" name="reset" value="Reset">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>
