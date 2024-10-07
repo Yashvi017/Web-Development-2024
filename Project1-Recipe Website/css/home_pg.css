@@ -1,6 +1,7 @@
-body {
+* {
     margin: 0;
     font-family: 'baskerville';
+    font-size: 16px ;
 }
 
 /*css for menu*/
