@@ -111,33 +111,14 @@
     color: #5F8B80;
 }
 
-.c_list a:hover>img {
-    border: 5px solid #294525;
-}
+
 
 .c_mg td {
     padding: 20px;
 }
 
-.c_list {
-    background-color: #fdfdfd;
-    border-radius: 10px;
-}
-
-.rec_list {
-    padding: 10px 20px 10px 20px;
-}
-
-/*.rec_list a:hover{
-    background-color: #294525;
-    font-weight: bold;
-    color:#fdfdfd;
-    border: 2px solid #294525;
-}*/
-
-.c_list p {
-    margin-bottom: 5px;
-    margin-top: 5px;
+.rec_list{
+    padding-bottom: 20px !important;
 }
 
 /*Footer*/
