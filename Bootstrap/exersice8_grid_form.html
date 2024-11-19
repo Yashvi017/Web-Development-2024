@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <!--create grid form to register yourself to find life partner. use link blow for reference 
+        https://www.shaadi.com
+        
+
+        I'm looking for
+        Aged ..... to
+        Of religion
+        And mother tongue
+
+        This profile is for
+        First name
+        Last name
+        Date of birth
+
+        His religion
+        community
+        Living in
+
+
+        -->
+
+    <div class="container-fluid pt-3 pb-3 text-bg-dark mb-5">
+        <h3 class="text-warning">Register to find your life partner</h3>
+        <div class="row">
+            <div class="col-12 col-md-4 mt-3">
+                <label class="form-label">I'm looking for a</label>
+                <select class="form-select">
+                    <option>Woman</option>
+                    <option>Man</option>
+                </select>
+            </div>
+            <div class="col-6 col-md-4 mt-3">
+                <label class="form-label">Aged</label>
+                <select class="form-select">
+                    <option>22</option>
+                    <option>23</option>
+                    <option>24</option>
+                    <option>25</option>
+                    <option>26</option>
+                    <option>27</option>
+                    <option>28</option>
+                    <option>29</option>
+                    <option>30</option>
+                </select>
+            </div>
+            <div class="col-6 col-md-4 mt-3">
+                <label class="form-label">to</label>
+                <select class="form-select">
+                    <option>22</option>
+                    <option>23</option>
+                    <option>24</option>
+                    <option>25</option>
+                    <option>26</option>
+                    <option>27</option>
+                    <option>28</option>
+                    <option>29</option>
+                    <option>30</option>
+                </select>
+            </div>
+            <div class="col-6 col-md-6 mt-3">
+                <label class="form-label">Religion</label>
+                <select class="form-select">
+                    <option>Hindu</option>
+                    <option>Muslim</option>
+                    <option>Sikh</option>
+                    <option>Christian</option>
+                    <option>Parsi</option>
+                    <option>Jain</option>
+                    <option>Buddhist</option>
+                </select>
+            </div>
+            <div class="col-6 col-md-6 mt-3">
+                <label class="form-label">Mother tongue</label>
+                <select class="form-select">
+                    <option>Gujarati</option>
+                    <option>Marathi</option>
+                    <option>Punjabi</option>
+                    <option>Bengali</option>
+                    <option>Urdu</option>
+                    <option>Telugu</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 mt-3">
+                <span class="d-block w-100 mb-1">This form is for</span>
+                
+                <div class="form-check">
+                    <input id="Myself" name="formisfor" type="radio" class="form-check-input" />
+                    <label for="Myself" class="form-check-label">Myself</label>
+                </div>
+
+                <div class="form-check">
+                    <input id="Son" name="formisfor" type="radio" class="form-check-input" />
+                    <label for="Son" class="form-check-label">Son</label>
+                </div>
+
+                <div class="form-check">
+                    <input id="Daughter" name="formisfor" type="radio" class="form-check-input" />
+                    <label for="Daughter" class="form-check-label">Daughter</label>
+                </div>
+
+                <div class="form-check">
+                    <input id="Brother" name="formisfor" type="radio" class="form-check-input" />
+                    <label for="Brother" class="form-check-label">Brother</label>
+                </div>
+
+                <div class="form-check">
+                    <input id="Sister" name="formisfor" type="radio" class="form-check-input" />
+                    <label for="Sister" class="form-check-label">Sister</label>
+                </div>
+
+            </div>
+            <div class="col-12 col-sm-6 col-md-3 mt-3">
+                <label class="form-label">First name</label>
+                <input type="text" class="form-control" required>
+            </div>
+            <div class="col-12 mt-3 col-sm-6 col-md-3">
+                <label class="form-label">Last name</label>
+                <input type="text" class="form-control" required>
+            </div>
+            <div class="col-12 col-sm-6 mt-3 col-md-3">
+                <label class="form-label">Date of birth</label>
+                <input type="date" class="form-control" required>
+            </div>
+            <div class="col-12 col-sm-6 col-md-3 mt-3">
+                <label class="form-label">Religion</label>
+                <select class="form-select">
+                    <option>Hindu</option>
+                    <option>Muslim</option>
+                    <option>Sikh</option>
+                    <option>Christian</option>
+                    <option>Parsi</option>
+                    <option>Jain</option>
+                    <option>Buddhist</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row">
+            
+            <div class="col-12 col-sm-6 mt-3">
+                <label class="form-label">Community</label>
+                <select class="form-select">
+                    <option>Hindu</option>
+                    <option>Muslim</option>
+                    <option>Sikh</option>
+                    <option>Christian</option>
+                    <option>Parsi</option>
+                    <option>Jain</option>
+                    <option>Buddhist</option>
+                </select>
+            </div>
+            <div class="col-12 col-sm-6 mt-3">
+                <label class="form-label">Living in</label>
+                <select class="form-select">
+                    <option>India</option>
+                    <option>Australia</option>
+                    <option>Canada</option>
+                    <option>USA</option>
+                    <option>UK</option>
+                    <option>Pakistan</option>
+                    <option>UAE</option>
+                    <option>South Africa</option>
+                    <option>South Arabia</option>
+                </select>
+            </div>
+
+            <div class="col-12 mt-5 text-end">
+                <button type="submit" class="btn btn-warning">Submit</button>
+                <button type="reset" class="btn btn-outline-warning">Reset</button>
+            </div>
+        </div>
+    </div>
+
+    <!--<div class="container pt-5 pb-5 text-bg-dark">
+        <h3 class="mb-5">Register Yourself to find a partner</h3>
+
+
+        <div class="row mb-3">
+            <div class="col-12">
+                <label class="form-label">I'm looking for a</label>
+                <select class="form-select">
+                    <option>Woman</option>
+                    <option>Man</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-6">
+                <label class="form-label">Aged</label>
+                <select class="form-select">
+                    <option>22</option>
+                    <option>23</option>
+                    <option>24</option>
+                    <option>25</option>
+                    <option>26</option>
+                    <option>27</option>
+                    <option>28</option>
+                    <option>29</option>
+                    <option>30</option>
+                </select>
+            </div>
+
+            <div class="col-6">
+                <label class="form-label">to</label>
+                <select class="form-select">
+                    <option>22</option>
+                    <option>23</option>
+                    <option>24</option>
+                    <option>25</option>
+                    <option>26</option>
+                    <option>27</option>
+                    <option>28</option>
+                    <option>29</option>
+                    <option>30</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-6">
+                <label class="form-label">Religion</label>
+                <select class="form-select">
+                    <option>Hindu</option>
+                    <option>Muslim</option>
+                    <option>Sikh</option>
+                    <option>Christian</option>
+                    <option>Parsi</option>
+                    <option>Jain</option>
+                    <option>Buddhist</option>
+                </select>
+            </div>
+
+            <div class="col-6">
+                <label class="form-label">Mother tongue</label>
+                <select class="form-select">
+                    <option>Gujarati</option>
+                    <option>Marathi</option>
+                    <option>Punjabi</option>
+                    <option>Bengali</option>
+                    <option>Urdu</option>
+                    <option>Telugu</option>
+                </select>
+            </div>
+
+            <div class="col-12 mt-5 text-end">
+                <input type="button" class="btn btn-primary" value="Submit">
+                <button type="reset" class="btn btn-warning">Clear</button>
+            </div>
+
+        </div>
+
+
+    </div>-->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
