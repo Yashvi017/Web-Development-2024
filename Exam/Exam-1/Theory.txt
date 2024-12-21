@@ -1,0 +1,32 @@
+Ans 1
+
+    There are 5 decision making statements :
+
+    1)if
+    2)if....else
+    3)nested if 
+    4)if...else ladder
+    5)Switch...case
+
+Ans 2
+
+    When we want to iterate the part of a code for several times, at that time we use loops.
+
+Ans 3
+
+    There are 3 types of loops in c language :
+
+    1)while()
+    2)do....while()
+    3)for()
+
+ans 4
+
+    When we want a block of code to perform a task together, at that time we use functions.
+
+ans 5
+
+    There are 2 types of function in c language :
+
+    1)Library functions
+    2)User defined functions
