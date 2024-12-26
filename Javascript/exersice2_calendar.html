@@ -1,25 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <title>Calendar 2025</title>
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 </head>
-<body>
-    
-    <h1 class="text-center">January 2025</h1>
-    <div id="january"></div>
-    
-    
-    <script>
 
-        var cal = `<table class="table table-hover table-responsive text-center">
+<body>
+
+    <h1 class="text-center">Calendar</h1>
+    <div id="january"></div>
+
+
+    <script>
+        "use strict";
+
+        let getCalendar = function () {
+            var days = 1; //31 days in january
+            var week = 1; //total maximum 5 weeks in a month
+            var weekDays; //Total 7 week days 1=sunday 2=monday .....
+
+            var month = parseInt(prompt("1.Jan \n2.Feb \n3.March \n4.April \n5.May \n6.June \n7.July \n8.Aug \n9.Sept \n10.Oct \n11.Nov \n12.Dec \nEnter the month : "));
+            var year = parseInt(prompt("Enter the year : "));
+            var firstDay = new Date(year, month - 1, 1);
+            var monthStartDay = firstDay.getDay() + 1;
+            var daysInMonth;
+
+            var monthName = "";
+            if (month === 1) monthName = "January";
+            else if (month === 2) monthName = "February";
+            else if (month === 3) monthName = "March";
+            else if (month === 4) monthName = "April";
+            else if (month === 5) monthName = "May";
+            else if (month === 6) monthName = "June";
+            else if (month === 7) monthName = "July";
+            else if (month === 8) monthName = "August";
+            else if (month === 9) monthName = "September";
+            else if (month === 10) monthName = "October";
+            else if (month === 11) monthName = "November";
+            else if (month === 12) monthName = "December";
+
+            var cal = `<h2 class="text-center">${monthName} ${year}</h2>
+                        <table class="table table-hover table-responsive text-center">
                         <tr class="table-primary h-100">
                             <th>Sunday</th>
                             <th>Monday</th>
@@ -29,52 +61,128 @@
                             <th>Friday</th>
                             <th>Saturday</th>
                         </tr>`;
-        
-        let getCalendar = function(){
-            var days =1; //31 days in january
-            var week = 1; //total maximum 5 weeks in a month
-            var weekDays; //Total 7 week days 1=sunday 2=monday .....
-            var monthStartDay = 4; // January 1,2025 is wednesday 
 
-            while (days <= 31) {
-                cal += `<tr>`; // Start a new row
-                
-                // Loop to generate the columns (days of the week) for this row
-                for (weekDays = 1; weekDays <= 7; weekDays++) {
-                    if (week === 1 && weekDays < monthStartDay) {
-                        // If it's the first week and before the start day of the month, add an empty cell
-                        cal += `<td></td>`;
-                    } else if (days <= 31) {
-                        // If the current day is within the valid range (1–31), add the day to the cell
-                        cal += `<td>${days}</td>`;
-                        days++; // Move to the next day
-                    } else {
-                        // If all days (1–31) are already added, fill the remaining cells with empty cells
-                        cal += `<td></td>`;
-                    }
+            //check for how many days a month has
+            if (month === 2) {
+                // Check for leap year
+                if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
+                    daysInMonth = 29; // Leap year February
+                } else {
+                    daysInMonth = 28; // Non-leap year February
                 }
-                
-                cal += `</tr>`; // End the current row
-                week++;
             }
-            
-            /*while(days <=31){
-                for(weekDays=1;weekDays<=7;weekDays++){
-                    if((week===1 && weekDays < monthStartDay)){
-                        cal += `<td></td>`;
+            else if (month === 1 || month === 3 || month === 5 || month === 7 || month === 8 || month === 10 || month === 12) {
+                daysInMonth = 31; // Months with 31 days
+            } else {
+                daysInMonth = 30; // Months with 30 days
+            }
+
+            if (daysInMonth === 31) {
+                while (days <= daysInMonth) {
+                    cal += `<tr>`;
+                    for (weekDays = 1; weekDays <= 7; weekDays++) {
+                        if (week === 1 && weekDays < monthStartDay) {
+                            cal += `<td></td>`;
+                        } else if (days <= 31) {
+
+                            // If the current day is within the valid range (1–31), add the day to the cell
+                            //mark sunday with red colour
+                            if (weekDays !== 1) {
+                                cal += `<td>${days}</td>`;
+                            }
+                            else {
+                                cal += `<td style="color:red;">${days}</td>`;
+                            }
+
+                            days++; // Move to the next day
+                        } else {
+                            // If all days (1–31) are already added, fill the remaining cells with empty cells
+                            cal += `<td></td>`;
+                        }
                     }
-                    else{
-                        cal += `<td>${days}</td>`;
-                        days++;
-                        weekDays++;
-                    }
+                    cal += `</tr>`; // End the current row
                     week++;
                 }
-            }*/
+            }
+            else if (daysInMonth === 30) {
+                while (days <= 30) {
+                    cal += `<tr>`;
+                    for (weekDays = 1; weekDays <= 7; weekDays++) {
+                        if (week === 1 && weekDays < monthStartDay) {
+                            cal += `<td></td>`;
+                        } else if (days <= 30) {
 
+                            if (weekDays !== 1) {
+                                cal += `<td>${days}</td>`;
+                            }
+                            else {
+                                cal += `<td style="color:red;">${days}</td>`;
+                            }
+
+                            days++; // Move to the next day
+                        } else {
+                            cal += `<td></td>`;
+                        }
+                    }
+                    cal += `</tr>`; // End the current row
+                    week++;
+                }
+            }
+            else if (daysInMonth === 29) {
+                while (days <= 29) {
+                    cal += `<tr>`;
+                    for (weekDays = 1; weekDays <= 7; weekDays++) {
+                        if (week === 1 && weekDays < monthStartDay) {
+                            cal += `<td></td>`;
+                        }
+                        else if (days <= 29) {
+
+                            if (weekDays !== 1) {
+                                cal += `<td>${days}</td>`;
+                            }
+                            else {
+                                cal += `<td style="color:red;">${days}</td>`;
+                            }
+
+                            days++; // Move to the next day
+                        }
+                        else {
+                            cal += `<td></td>`;
+                        }
+                    }
+                    cal += `</tr>`; // End the current row
+                    week++;
+                }
+            }
+            else {
+                while (days <= 28) {
+                    cal += `<tr>`;
+                    for (weekDays = 1; weekDays <= 7; weekDays++) {
+                        if (week === 1 && weekDays < monthStartDay) {
+                            cal += `<td></td>`;
+                        }
+                        else if (days <= 28) {
+
+                            if (weekDays !== 1) {
+                                cal += `<td>${days}</td>`;
+                            }
+                            else {
+                                cal += `<td style="color:red;">${days}</td>`;
+                            }
+
+                            days++; // Move to the next day
+                        }
+                        else {
+                            cal += `<td></td>`;
+                        }
+                    }
+                    cal += `</tr>`; // End the current row
+                    week++;
+                }
+            }
 
             cal += `</table>`;
-            document.getElementById('january').innerHTML= cal;
+            document.getElementById('january').innerHTML = cal;
         }
 
         //function call
@@ -82,8 +190,11 @@
 
     </script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 
 
 </body>
+
 </html>
