@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Generate Table</title>
+</head>
+
+<body>
+    <div id="table"></div>
+
+    <script>
+        var output = `<table>`,count;
+
+        let generateTable = function () {
+            var num = 1;
+
+            for(num=1;num<=5;num++){
+                count=1;
+                var row=``;
+                for(count=1;count<=10;count++){
+                    row += `<tr>
+                                <td>${num}</td>
+                                <td>x</td>
+                                <td>${count}</td>
+                                <td>=</td>
+                                <td>${count * num}</td>
+                            </tr>`;
+                }
+                output += row;
+            }
+
+
+            output += `</table>`;
+            document.getElementById('table').innerHTML = output; 
+        };
+        generateTable();
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome Series</title>
+</head>
+<body>
+    <div id="palindrome"></div>
+
+    <script>
+
+    var i,j;
+    var str = prompt("Enter a string :");
+
+    let checkPalindrome = function(str) {
+        let j = str.length - 1
+        for (let i = 0; i < str.length / 2; i++) {
+            if (str[i] != str[j]) {
+                return false;
+            }
+            j--;
+        }
+        return true;
+    }
+
+    document.getElementById('palindrome').innerHTML=checkPalindrome(str);
+
+    </script>
+</body>
+</html>
