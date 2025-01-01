@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <style>
+        td {
+            height: 48px;
+            width: 48px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>2nd way of event handling</h1>
+    <h2>Tic Tac Toe</h2>
+    <hr />
+    <table border="1" cellpadding="10" align="center">
+        <tr>
+            <td>
+
+            </td>
+            <td>
+
+            </td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+
+            </td>
+            <td>
+
+            </td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+
+            </td>
+            <td>
+
+            </td>
+            <td>
+
+            </td>
+        </tr>
+    </table>
+    <script>
+        //create variable to store reference ot 1st td
+        var cells = document.getElementsByTagName('td'); //return reference of all td tag as list/array/collection
+        // console.log(cells);
+        // [...cells].forEach((td) => {
+        //     console.log(td.innerHTML); 
+        // });
+
+        //Get user name
+        var player1 = prompt("Enter 1st player's name :");
+        var player2 = prompt("Enter 2nd player's name :");
+        
+        // Loop to ensure valid sign input
+        var sign;
+        while (true) {
+            sign = prompt("Enter " + player1 + "'s sign ('x' or '0'):");
+            if (sign === 'X' || sign === 'x') {
+                sign = `<img src='img/false.png' />`;
+                break;
+            } else if (sign === '0') {
+                sign = `<img src='img/zero.png' />`;
+                break;
+            } else {
+                alert("Invalid sign! Please enter 'x' or '0'.");
+            }
+        }
+
+        // Assign click event to each cell
+        for (let index = 0; index < cells.length; index++) {
+            cells[index].onclick = function () {
+                this.innerHTML = sign;
+                
+                if (sign === `<img src='img/false.png' />`) {
+                    sign = `<img src='img/zero.png' />`;
+                } else {
+                    sign = `<img src='img/false.png' />`;
+                }
+                
+                this.onclick = null;
+            }
+        }
+        
+    </script>
+</body>
+
+</html>
