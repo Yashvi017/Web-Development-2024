@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <style>
+        td {
+            height: 48px;
+            width: 48px;
+            text-align: center;
+            font-size: 24px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tic Tac Toe</h1>
+    <h2>Player vs Computer</h2>
+    <hr />
+    <table border="1" cellpadding="10" align="center">
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+
+    <script>
+        // Get all the table cells (the playing grid)
+        var cells = document.getElementsByTagName('td');
+        
+        // Get player name and sign input
+        var playerName = prompt("Enter your name:");
+        var playerSign = prompt(playerName + ", enter your sign ('x', 'X', or '0'):");
+        
+        // Validate player sign (Accept 'x', 'X' or '0' only)
+        while (!['x', 'X', '0'].includes(playerSign)) {
+            playerSign = prompt("Invalid sign! Please enter 'x', 'X', or '0':");
+        }
+        
+        // Normalize the sign to lowercase for consistency
+        playerSign = playerSign.toLowerCase();
+        
+        // Set the computer's sign to the opposite of the player's sign
+        var computerSign = (playerSign === 'x') ? '0' : 'x'; 
+        var currentPlayer = 'player'; // 'player' or 'computer'
+        var gameBoard = ['', '', '', '', '', '', '', '', '']; // Empty board state
+
+        // Check for a winner
+        function checkWinner(sign) {
+            const winPatterns = [
+                [0, 1, 2], [3, 4, 5], [6, 7, 8], // Rows
+                [0, 3, 6], [1, 4, 7], [2, 5, 8], // Columns
+                [0, 4, 8], [2, 4, 6]  // Diagonals
+            ];
+            return winPatterns.some(pattern => 
+                pattern.every(index => gameBoard[index] === sign)
+            );
+        }
+
+        // Check for available moves
+        function availableMoves() {
+            return gameBoard.map((value, index) => value === '' ? index : -1).filter(index => index !== -1);
+        }
+
+        // Check for a tie
+        function checkTie() {
+            return availableMoves().length === 0;
+        }
+
+        // Computer makes a move
+        function computerMove() {
+            let bestMove = minimax(gameBoard, computerSign).index;
+            gameBoard[bestMove] = computerSign;
+            cells[bestMove].innerHTML = computerSign;
+            if (checkWinner(computerSign)) {
+                alert("Computer wins!");
+                resetGame();
+                return;
+            }
+            if (checkTie()) {
+                alert("It's a Tie!");
+                resetGame();
+                return;
+            }
+            currentPlayer = 'player'; // Player's turn after computer move
+        }
+
+        // Minimax Algorithm for Computer to make the optimal move
+        function minimax(board, player) {
+            const availableSpots = availableMoves();
+            if (checkWinner(computerSign)) return { score: 1 };
+            if (checkWinner(playerSign)) return { score: -1 };
+            if (availableSpots.length === 0) return { score: 0 };
+
+            let moves = [];
+            for (let i = 0; i < availableSpots.length; i++) {
+                let move = {};
+                move.index = availableSpots[i];
+                board[move.index] = player;
+
+                if (player === computerSign) {
+                    let result = minimax(board, playerSign);
+                    move.score = result.score;
+                } else {
+                    let result = minimax(board, computerSign);
+                    move.score = result.score;
+                }
+
+                board[move.index] = '';
+                moves.push(move);
+            }
+
+            let bestMove;
+            if (player === computerSign) {
+                let bestScore = -Infinity;
+                for (let i = 0; i < moves.length; i++) {
+                    if (moves[i].score > bestScore) {
+                        bestScore = moves[i].score;
+                        bestMove = i;
+                    }
+                }
+            } else {
+                let bestScore = Infinity;
+                for (let i = 0; i < moves.length; i++) {
+                    if (moves[i].score < bestScore) {
+                        bestScore = moves[i].score;
+                        bestMove = i;
+                    }
+                }
+            }
+
+            return moves[bestMove];
+        }
+
+        // Player makes a move
+        function playerMove(cellIndex) {
+            if (gameBoard[cellIndex] === '' && currentPlayer === 'player') {
+                gameBoard[cellIndex] = playerSign;
+                cells[cellIndex].innerHTML = playerSign;
+                if (checkWinner(playerSign)) {
+                    alert(playerName + " wins!");
+                    resetGame();
+                    return;
+                }
+                if (checkTie()) {
+                    alert("It's a Tie!");
+                    resetGame();
+                    return;
+                }
+                currentPlayer = 'computer'; // Switch to computer's turn
+                computerMove();
+            }
+        }
+
+        // Reset the game
+        function resetGame() {
+            gameBoard = ['', '', '', '', '', '', '', '', ''];
+            for (let i = 0; i < cells.length; i++) {
+                cells[i].innerHTML = '';
+            }
+            currentPlayer = 'player'; // Player always starts
+        }
+
+        // Add event listener to cells
+        for (let i = 0; i < cells.length; i++) {
+            cells[i].addEventListener('click', function () {
+                playerMove(i);
+            });
+        }
+
+        // Start a new game on page load
+        resetGame();
+    </script>
+</body>
+</html>
