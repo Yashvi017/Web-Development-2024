@@ -1,0 +1,107 @@
+<!-- 6) convert amount into words in 13_event.html (upto 100 crore)
+input : 12345 
+output : ten thousand three hundred forty five.
+special instruction : without decision making statement. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convert amount into words</title>
+</head>
+<body>
+    <h1>Convert amount to words</h1>
+    <hr>
+
+    <script>
+        // var numberWords = [
+        //     "", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine",
+        //     "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"
+        // ];
+        // var tensWords = ["", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"];
+        // var placeWords = ["", "thousand", "lakh", "crore"];
+
+        // function convertToWords(num) {
+        //     var result = [];
+        //     var segments = [];
+        //     num = num.toString();
+            
+        //     // Split the number into groups of three digits from the right
+        //     while (num.length > 0) {
+        //         segments.push(num.slice(-3));
+        //         num = num.slice(0, -3);
+        //     }
+            
+        //     var segmentIndex = 0;
+        //     while (segments.length > 0) {
+        //         var segment = parseInt(segments.pop(), 10);
+        //         var segmentWords = [];
+                
+        //         var hundreds = Math.floor(segment / 100);
+        //         var tensAndOnes = segment % 100;
+                
+        //         segmentWords.push(hundreds > 0 ? numberWords[hundreds] + " hundred" : "");
+        //         segmentWords.push(tensAndOnes < 20 ? numberWords[tensAndOnes] : tensWords[Math.floor(tensAndOnes / 10)] + (tensAndOnes % 10 > 0 ? " " + numberWords[tensAndOnes % 10] : ""));
+        //         segmentWords = segmentWords.filter(Boolean).join(" ");
+                
+        //         result.push(segmentWords + (segmentWords && placeWords[segmentIndex] ? " " + placeWords[segmentIndex] : ""));
+        //         segmentIndex++;
+        //     }
+            
+        //     return result.filter(Boolean).join(" ").trim();
+        // }
+
+
+
+
+
+
+        var numberWords = [
+            "", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine",
+            "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"
+        ];
+        var tensWords = ["", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"];
+        var placeWords = ["", "thousand", "lakh", "crore"];
+
+        function convertToWords(num) {
+            var result = [];
+            var segments = [];
+            num = num.toString();
+            
+            // Split the number into groups of three digits from the right
+            while (num.length > 0) {
+                segments.push(num.slice(-3));
+                num = num.slice(0, -3);
+            }
+            
+            var segmentIndex = 0;
+            while (segments.length > 0) {
+                var segment = parseInt(segments.pop(), 10);
+                var segmentWords = [];
+                
+                var hundreds = Math.floor(segment / 100);
+                var tensAndOnes = segment % 100;
+                
+                segmentWords.push(hundreds > 0 ? numberWords[hundreds] + " hundred" : "");
+                segmentWords.push(tensAndOnes < 20 ? numberWords[tensAndOnes] : tensWords[Math.floor(tensAndOnes / 10)] + (tensAndOnes % 10 > 0 ? " " + numberWords[tensAndOnes % 10] : ""));
+                segmentWords = segmentWords.filter(Boolean).join(" ");
+                
+                result.push(segmentWords + (segmentWords && placeWords[segmentIndex] ? " " + placeWords[segmentIndex] : ""));
+                segmentIndex++;
+            }
+            
+            return result.filter(Boolean).join(" ").trim();
+        }
+
+        // Input number
+        var inputNumber = 12345;
+        var output = convertToWords(inputNumber);
+
+        // Print result to the console
+        console.log(output); // Output: "twelve thousand three hundred forty five"
+
+
+    </script>
+</body>
+</html>

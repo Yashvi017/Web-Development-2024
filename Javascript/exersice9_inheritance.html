@@ -1,0 +1,77 @@
+<!--7) create class KB 
+        has property variable bytes 
+        has function getKB which return kilobyte of given bytes 
+
+    create class TB should inherit GB 
+         has function getGB which return terabytes of given bytes-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inheritance Exersice</title>
+</head>
+<body>
+    <h1>Converter KB/MB/GB/TB</h1>
+    <hr>
+
+    <script>
+        class KB{
+            constructor(bytes){
+                this.bytes = bytes;
+            }
+            getKB(){
+                let kilobyte = 1024 * this.bytes;
+                return kilobyte;
+            }
+        }
+
+        class MB extends KB{
+        //     create class MB should inherit KB 
+        //  has function getMB which return megabytes of given bytes
+            constructor(bytes){
+                super(bytes);
+            }
+            getMB(){
+                let megabyte = super.getKB() * 1024;
+                return megabyte;
+            }
+        }
+
+        class GB extends MB{
+            // create class GB should inherit MB 
+            // has function getGB which return gigabytes of given bytes
+            constructor(bytes){
+                super(bytes);
+            }
+            getGB(){
+                let gigabyte = super.getMB() * 1024;
+                return gigabyte;
+            }
+        }
+
+        class TB extends GB{
+            constructor(bytes){
+                super(bytes);
+            }
+            getTB(){
+                let terabyte = super.getGB() * 1024;
+                return terabyte;
+            }
+        }
+
+        var kb = new KB(10);
+        console.log(kb.getKB());
+
+        var mb = new MB(10);
+        console.log(mb.getMB());
+
+        var gb = new GB(10);
+        console.log(gb.getGB());
+
+        var tb = new TB(10);
+        console.log(tb.getTB());
+    </script>
+</body>
+</html>
