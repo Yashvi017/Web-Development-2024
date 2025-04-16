@@ -2,15 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 
-{/*4) create bootstrap 5 website that will display 12 products responsively using functional components 
+{/*
+  4) create bootstrap 5 website that will display 12 products responsively using functional components 
     each product should have
         Name, 
         Photo 
         Price 
         Size 
         Weight
-
-5) Create your resume using class components*/}
+*/}
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
