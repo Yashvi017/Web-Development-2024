@@ -3,14 +3,28 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 
 // Services
-function Services() {
+function Services(props) {
     return (
         <div className="col-lg-3 col-md-6 text-center">
             <div className="mt-5">
                 <div className="mb-2"><i className="bi-gem fs-1 text-primary" /></div>
-                <h3 className="h4 mb-2">Sturdy Themes</h3>
-                <p className="text-muted mb-0">Our themes are updated regularly to keep them bug free!</p>
+                <h3 className="h4 mb-2">{props.name}</h3>
+                <p className="text-muted mb-0">{props.desc}</p>
             </div>
+        </div>
+    );
+}
+
+function Portfolio(props) {
+    return (
+        <div className="col-lg-4 col-sm-6">
+            <a className="portfolio-box" href="{props.source}" title="Project Name">
+                <img className="img-fluid" src={props.source} alt="..." />
+                <div className="portfolio-box-caption">
+                    <div className="project-category text-white-50">{props.category}</div>
+                    <div className="project-name">{props.projectnm}</div>
+                </div>
+            </a>
         </div>
     );
 }
@@ -66,28 +80,10 @@ function Website() {
                     <h2 className="text-center mt-0">At Your Service</h2>
                     <hr className="divider" />
                     <div className="row gx-4 gx-lg-5">
-
-                        {/* <div className="col-lg-3 col-md-6 text-center">
-                            <div className="mt-5">
-                                <div className="mb-2"><i className="bi-laptop fs-1 text-primary" /></div>
-                                <h3 className="h4 mb-2">Up to Date</h3>
-                                <p className="text-muted mb-0">All dependencies are kept current to keep things fresh.</p>
-                            </div>
-                        </div>
-                        <div className="col-lg-3 col-md-6 text-center">
-                            <div className="mt-5">
-                                <div className="mb-2"><i className="bi-globe fs-1 text-primary" /></div>
-                                <h3 className="h4 mb-2">Ready to Publish</h3>
-                                <p className="text-muted mb-0">You can use this design as is, or you can make changes!</p>
-                            </div>
-                        </div>
-                        <div className="col-lg-3 col-md-6 text-center">
-                            <div className="mt-5">
-                                <div className="mb-2"><i className="bi-heart fs-1 text-primary" /></div>
-                                <h3 className="h4 mb-2">Made with Love</h3>
-                                <p className="text-muted mb-0">Is it really open source if it's not made with love?</p>
-                            </div>
-                        </div> */}
+                        <Services name='Sturdy Themes' desc='Our themes are updated regularly to keep them bug free!' />
+                        <Services name='Up to Date' desc='All dependencies are kept current to keep things fresh.' />
+                        <Services name='Ready to Publish' desc='You can use this design as is, or you can make changes!' />
+                        <Services name='Made with Love' desc='Is it really open source if its not made with love?' />
                     </div>
                 </div>
             </section>
@@ -95,60 +91,12 @@ function Website() {
             <div id="portfolio">
                 <div className="container-fluid p-0">
                     <div className="row g-0">
-                        <div className="col-lg-4 col-sm-6">
-                            <a className="portfolio-box" href="website/assets/img/portfolio/fullsize/1.jpg" title="Project Name">
-                                <img className="img-fluid" src="website/assets/img/portfolio/thumbnails/1.jpg" alt="..." />
-                                <div className="portfolio-box-caption">
-                                    <div className="project-category text-white-50">Category</div>
-                                    <div className="project-name">Project Name</div>
-                                </div>
-                            </a>
-                        </div>
-                        <div className="col-lg-4 col-sm-6">
-                            <a className="portfolio-box" href="website/assets/img/portfolio/fullsize/2.jpg" title="Project Name">
-                                <img className="img-fluid" src="website/assets/img/portfolio/thumbnails/2.jpg" alt="..." />
-                                <div className="portfolio-box-caption">
-                                    <div className="project-category text-white-50">Category</div>
-                                    <div className="project-name">Project Name</div>
-                                </div>
-                            </a>
-                        </div>
-                        <div className="col-lg-4 col-sm-6">
-                            <a className="portfolio-box" href="website/assets/img/portfolio/fullsize/3.jpg" title="Project Name">
-                                <img className="img-fluid" src="website/assets/img/portfolio/thumbnails/3.jpg" alt="..." />
-                                <div className="portfolio-box-caption">
-                                    <div className="project-category text-white-50">Category</div>
-                                    <div className="project-name">Project Name</div>
-                                </div>
-                            </a>
-                        </div>
-                        <div className="col-lg-4 col-sm-6">
-                            <a className="portfolio-box" href="website/assets/img/portfolio/fullsize/4.jpg" title="Project Name">
-                                <img className="img-fluid" src="website/assets/img/portfolio/thumbnails/4.jpg" alt="..." />
-                                <div className="portfolio-box-caption">
-                                    <div className="project-category text-white-50">Category</div>
-                                    <div className="project-name">Project Name</div>
-                                </div>
-                            </a>
-                        </div>
-                        <div className="col-lg-4 col-sm-6">
-                            <a className="portfolio-box" href="website/assets/img/portfolio/fullsize/5.jpg" title="Project Name">
-                                <img className="img-fluid" src="website/assets/img/portfolio/thumbnails/5.jpg" alt="..." />
-                                <div className="portfolio-box-caption">
-                                    <div className="project-category text-white-50">Category</div>
-                                    <div className="project-name">Project Name</div>
-                                </div>
-                            </a>
-                        </div>
-                        <div className="col-lg-4 col-sm-6">
-                            <a className="portfolio-box" href="website/assets/img/portfolio/fullsize/6.jpg" title="Project Name">
-                                <img className="img-fluid" src="website/assets/img/portfolio/thumbnails/6.jpg" alt="..." />
-                                <div className="portfolio-box-caption p-3">
-                                    <div className="project-category text-white-50">Category</div>
-                                    <div className="project-name">Project Name</div>
-                                </div>
-                            </a>
-                        </div>
+                        <Portfolio source='website/assets/img/portfolio/thumbnails/1.jpg' category='Category' projectnm='Project Name' />
+                        <Portfolio source='website/assets/img/portfolio/thumbnails/2.jpg' category='Category' projectnm='Project Name' />
+                        <Portfolio source='website/assets/img/portfolio/thumbnails/3.jpg' category='Category' projectnm='Project Name' />
+                        <Portfolio source='website/assets/img/portfolio/thumbnails/4.jpg' category='Category' projectnm='Project Name' />
+                        <Portfolio source='website/assets/img/portfolio/thumbnails/5.jpg' category='Category' projectnm='Project Name' />
+                        <Portfolio source='website/assets/img/portfolio/thumbnails/6.jpg' category='Category' projectnm='Project Name' />
                     </div>
                 </div>
             </div>
