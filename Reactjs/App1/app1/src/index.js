@@ -11,12 +11,12 @@ class Room extends React.Component {
   }
 
   updateStatus = () => {
-    const newStatus = this.state.status === 'Available' ? 'Occupied' : 'Available';
+    let newStatus = this.state.status === 'Available' ? 'Occupied' : 'Available';
     this.setState({ status: newStatus });
   };
 
   render() {
-    const buttonClass = this.state.status === 'Occupied' ? 'btn btn-danger' : 'btn btn-success';
+    let buttonClass = this.state.status === 'Occupied' ? 'btn btn-danger' : 'btn btn-success';
 
     return (
       <tr>
