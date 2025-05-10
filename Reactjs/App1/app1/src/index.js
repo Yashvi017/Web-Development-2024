@@ -11,10 +11,15 @@ import './index.css';
 class WebApp extends React.Component {
   constructor(props) {
     super(props);
+    this.state={
+      showContent : false
+    };
   }
 
   showMobile = () =>{
-
+    this.setState({
+      showContent: !this.showContent
+    });
   }
   render() {
     return (
