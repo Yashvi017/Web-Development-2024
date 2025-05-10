@@ -1,73 +1,141 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+// 11) create web application that has 4 buttons 
+//         Mobile 
+//         laptop 
+//         TV
+//         Camera
+//     when user click on any one of the button display 4 products of selected button category (use conditional rendering)
 
-class Room extends React.Component {
+class WebApp extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      status: props.status, 
-    };
   }
 
-  updateStatus = () => {
-    let newStatus = this.state.status === 'Available' ? 'Occupied' : 'Available';
-    this.setState({ status: newStatus });
-  };
+  showMobile = () =>{
 
-  render() {
-    let buttonClass = this.state.status === 'Occupied' ? 'btn btn-danger' : 'btn btn-success';
-
-    return (
-      <tr>
-        <td>{this.props.no}</td>
-        <td>{this.props.floor}</td>
-        <td>{this.props.roomtype}</td>
-        <td>{this.state.status}</td>
-        <td>
-          <button type="button" className={buttonClass} onClick={this.updateStatus}>
-            {this.state.status === 'Available' ? 'Available' : 'Occupied'}
-          </button>
-        </td>
-      </tr>
-    );
   }
-}
-
-class Hotel extends React.Component {
   render() {
     return (
-      <div className="container mt-5">
-        <div className="row">
-          <div className="col-12">
-            <h2 className="mb-4">Hotel Room Information</h2>
-            <table className="table table-bordered">
-              <thead className="table-dark">
-                <tr>
-                  <th>No</th>
-                  <th>Floor</th>
-                  <th>Room Type</th>
-                  <th>Status</th>
-                  <th>Change Status</th>
-                </tr>
-              </thead>
-              <tbody>
-                <Room no="101" floor="1" roomtype="Deluxe" status="Occupied" />
-                <Room no="102" floor="1" roomtype="Super Deluxe" status="Available" />
-                <Room no="103" floor="1" roomtype="Super Deluxe" status="Available" />
-                <Room no="104" floor="1" roomtype="Super Deluxe" status="Available" />
-                <Room no="201" floor="2" roomtype="Deluxe" status="Occupied" />
-                <Room no="202" floor="2" roomtype="Super Deluxe" status="Occupied" />
-                <Room no="203" floor="2" roomtype="Deluxe" status="Occupied" />
-                <Room no="204" floor="2" roomtype="Deluxe" status="Available" />
-              </tbody>
-            </table>
+      <div className="container py-5">
+        {/* <h1 className="text-center mb-4">Device Selection</h1> */}
+        <div className="d-grid gap-3 col-6 mx-auto">
+          <button type="button" className="btn btn-primary" onClick={this.showMobile}>Mobile</button>
+          <button type="button" className="btn btn-secondary">Laptop</button>
+          <button type="button" className="btn btn-success">TV</button>
+          <button type="button" className="btn btn-danger">Camera</button>
+        </div>
+
+        <div>
+          {/* Product Cards by Category */}
+          <div className="row mt-5 mb-5">
+            <h3>Mobile</h3>
+            <div className="row">
+              <div className="col-md-3 mb-3">
+                <div className="card h-100 shadow-sm">
+                  <div className="card-body">iPhone 14</div>
+                </div>
+              </div>
+              <div className="col-md-3 mb-3">
+                <div className="card h-100 shadow-sm">
+                  <div className="card-body">Samsung Galaxy S23</div>
+                </div>
+              </div>
+              <div className="col-md-3 mb-3">
+                <div className="card h-100 shadow-sm">
+                  <div className="card-body">OnePlus 11</div>
+                </div>
+              </div>
+              <div className="col-md-3 mb-3">
+                <div className="card h-100 shadow-sm">
+                  <div className="card-body">Google Pixel 7</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="row mb-5 mt-5">
+            <h3>Laptop</h3>
+            <div className="row">
+              <div className="col-md-3 mb-3">
+                <div className="card h-100 shadow-sm">
+                  <div className="card-body">MacBook Air</div>
+                </div>
+              </div>
+              <div className="col-md-3 mb-3">
+                <div className="card h-100 shadow-sm">
+                  <div className="card-body">Dell XPS 13</div>
+                </div>
+              </div>
+              <div className="col-md-3 mb-3">
+                <div className="card h-100 shadow-sm">
+                  <div className="card-body">HP Spectre x360</div>
+                </div>
+              </div>
+              <div className="col-md-3 mb-3">
+                <div className="card h-100 shadow-sm">
+                  <div className="card-body">Lenovo ThinkPad</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="row mb-5 mt-5">
+            <h3>TV</h3>
+            <div className="row">
+              <div className="col-md-3 mb-3">
+                <div className="card h-100 shadow-sm">
+                  <div className="card-body">Samsung OLED</div>
+                </div>
+              </div>
+              <div className="col-md-3 mb-3">
+                <div className="card h-100 shadow-sm">
+                  <div className="card-body">LG Smart TV</div>
+                </div>
+              </div>
+              <div className="col-md-3 mb-3">
+                <div className="card h-100 shadow-sm">
+                  <div className="card-body">Sony Bravia</div>
+                </div>
+              </div>
+              <div className="col-md-3 mb-3">
+                <div className="card h-100 shadow-sm">
+                  <div className="card-body">TCL Roku TV</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="row mb-5 mt-5">
+            <h3>Camera</h3>
+            <div className="row">
+              <div className="col-md-3 mb-3">
+                <div className="card h-100 shadow-sm">
+                  <div className="card-body">Canon EOS R5</div>
+                </div>
+              </div>
+              <div className="col-md-3 mb-3">
+                <div className="card h-100 shadow-sm">
+                  <div className="card-body">Nikon Z6</div>
+                </div>
+              </div>
+              <div className="col-md-3 mb-3">
+                <div className="card h-100 shadow-sm">
+                  <div className="card-body">Sony Alpha A7 III</div>
+                </div>
+              </div>
+              <div className="col-md-3 mb-3">
+                <div className="card h-100 shadow-sm">
+                  <div className="card-body">Fujifilm X-T4</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
+
+
       </div>
     );
   }
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<Hotel />);
+root.render(<WebApp />);
