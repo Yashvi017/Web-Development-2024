@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 // 11) create web application that has 4 buttons 
 //         Mobile 
 //         laptop 
@@ -8,139 +7,110 @@ import './index.css';
 //         Camera
 //     when user click on any one of the button display 4 products of selected button category (use conditional rendering)
 
-class WebApp extends React.Component {
+
+// Product class for repeating design of products
+class Product extends React.Component {
   constructor(props) {
     super(props);
-    this.state={
-      showContent : false
-    };
-  }
-
-  showMobile = () =>{
-    this.setState({
-      showContent: !this.showContent
-    });
+    this.name = props.name;
+    this.image=props.image;
+    this.price=props.price;
   }
   render() {
     return (
-      <div className="container py-5">
-        {/* <h1 className="text-center mb-4">Device Selection</h1> */}
-        <div className="d-grid gap-3 col-6 mx-auto">
-          <button type="button" className="btn btn-primary" onClick={this.showMobile}>Mobile</button>
-          <button type="button" className="btn btn-secondary">Laptop</button>
-          <button type="button" className="btn btn-success">TV</button>
-          <button type="button" className="btn btn-danger">Camera</button>
-        </div>
-
-        <div>
-          {/* Product Cards by Category */}
-          <div className="row mt-5 mb-5">
-            <h3>Mobile</h3>
-            <div className="row">
-              <div className="col-md-3 mb-3">
-                <div className="card h-100 shadow-sm">
-                  <div className="card-body">iPhone 14</div>
-                </div>
-              </div>
-              <div className="col-md-3 mb-3">
-                <div className="card h-100 shadow-sm">
-                  <div className="card-body">Samsung Galaxy S23</div>
-                </div>
-              </div>
-              <div className="col-md-3 mb-3">
-                <div className="card h-100 shadow-sm">
-                  <div className="card-body">OnePlus 11</div>
-                </div>
-              </div>
-              <div className="col-md-3 mb-3">
-                <div className="card h-100 shadow-sm">
-                  <div className="card-body">Google Pixel 7</div>
-                </div>
-              </div>
-            </div>
+      <div className="col-md-3 mb-3">
+        <div className="card shadow">
+          <div className="card-header text-center text-bg-dark">
+            <h3>{this.name}</h3>
           </div>
-          <div className="row mb-5 mt-5">
-            <h3>Laptop</h3>
-            <div className="row">
-              <div className="col-md-3 mb-3">
-                <div className="card h-100 shadow-sm">
-                  <div className="card-body">MacBook Air</div>
-                </div>
-              </div>
-              <div className="col-md-3 mb-3">
-                <div className="card h-100 shadow-sm">
-                  <div className="card-body">Dell XPS 13</div>
-                </div>
-              </div>
-              <div className="col-md-3 mb-3">
-                <div className="card h-100 shadow-sm">
-                  <div className="card-body">HP Spectre x360</div>
-                </div>
-              </div>
-              <div className="col-md-3 mb-3">
-                <div className="card h-100 shadow-sm">
-                  <div className="card-body">Lenovo ThinkPad</div>
-                </div>
-              </div>
-            </div>
+          <div className='card-body'>
+            <img src={this.image}/>
           </div>
-          <div className="row mb-5 mt-5">
-            <h3>TV</h3>
-            <div className="row">
-              <div className="col-md-3 mb-3">
-                <div className="card h-100 shadow-sm">
-                  <div className="card-body">Samsung OLED</div>
-                </div>
-              </div>
-              <div className="col-md-3 mb-3">
-                <div className="card h-100 shadow-sm">
-                  <div className="card-body">LG Smart TV</div>
-                </div>
-              </div>
-              <div className="col-md-3 mb-3">
-                <div className="card h-100 shadow-sm">
-                  <div className="card-body">Sony Bravia</div>
-                </div>
-              </div>
-              <div className="col-md-3 mb-3">
-                <div className="card h-100 shadow-sm">
-                  <div className="card-body">TCL Roku TV</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="row mb-5 mt-5">
-            <h3>Camera</h3>
-            <div className="row">
-              <div className="col-md-3 mb-3">
-                <div className="card h-100 shadow-sm">
-                  <div className="card-body">Canon EOS R5</div>
-                </div>
-              </div>
-              <div className="col-md-3 mb-3">
-                <div className="card h-100 shadow-sm">
-                  <div className="card-body">Nikon Z6</div>
-                </div>
-              </div>
-              <div className="col-md-3 mb-3">
-                <div className="card h-100 shadow-sm">
-                  <div className="card-body">Sony Alpha A7 III</div>
-                </div>
-              </div>
-              <div className="col-md-3 mb-3">
-                <div className="card h-100 shadow-sm">
-                  <div className="card-body">Fujifilm X-T4</div>
-                </div>
-              </div>
-            </div>
+          <div className='card-footer'>
+            <h6>{this.price}</h6>
           </div>
         </div>
-
-
       </div>
     );
   }
 }
 
+class WebApp extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      category : ''
+    }
+  }
+
+  showMobile = () =>{
+    this.setState({
+      category: 'Mobile'
+    });
+  }
+
+  render() {
+    return (
+      <div className="container py-5">
+        <div className="row">
+          <h2 className="text-center mb-4">Product Categories</h2>
+
+          <div className="d-flex justify-content-center gap-3 flex-wrap mb-5">
+            <button className="btn btn-primary" onClick={this.showMobile}>Mobile</button>
+            <button className="btn btn-secondary">Laptop</button>
+            <button className="btn btn-success">TV</button>
+            <button className="btn btn-danger">Camera</button>
+          </div>
+
+          {/* Mobile Products */}
+          <div className="mb-5">
+            <h4>Mobile Products</h4>
+            <div className="row">
+              <Product name="iPhone 14" image="https://picsum.photos/270?random=1" price="$1500"/>
+              <Product name="Samsung Galaxy S23" image="https://picsum.photos/270?random=2" price="$150"/>
+              <Product name="OnePlus 11" image="https://picsum.photos/270?random=3" price="$80"/>
+              <Product name="Google Pixel 7" image="https://picsum.photos/270?random=4" price="$500"/>   
+            </div>
+          </div>
+
+          {/* Laptop Products */}
+          <div className="mb-5">
+            <h4>Laptop Products</h4>
+            <div className="row">
+              <Product name="Macbook" image="https://picsum.photos/270?random=5" price="$1500"/>
+              <Product name="HP" image="https://picsum.photos/270?random=6" price="$150"/>
+              <Product name="Samsung" image="https://picsum.photos/270?random=7" price="$80"/>
+              <Product name="Asus" image="https://picsum.photos/270?random=8" price="$500"/>     
+            </div>
+          </div>
+
+          {/* TV Products */}
+          <div className="mb-5">
+            <h4>TV Products</h4>
+            <div className="row">
+              <Product name="Samsung OLED" image="https://picsum.photos/270?random=9" price="$1500"/>
+              <Product name="LG Smart TV" image="https://picsum.photos/270?random=10" price="$150"/>
+              <Product name="Sony Bravia" image="https://picsum.photos/270?random=11" price="$80"/>
+              <Product name="TCL Roku TV" image="https://picsum.photos/270?random=12" price="$500"/> 
+            </div>
+          </div>
+
+          {/* Camera Products */}
+          <div className="mb-5">
+            <h4>Camera Products</h4>
+            <div className="row">
+              <Product name="Canon EOS R5" image="https://picsum.photos/270?random=13" price="$1500"/>
+              <Product name="Nikon Z6" image="https://picsum.photos/270?random=14" price="$150"/>
+              <Product name="Sony Alpha A7 III" image="https://picsum.photos/270?random=15" price="$80"/>
+              <Product name="Fujifilm X-T4" image="https://picsum.photos/270?random=16" price="$500"/>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    );
+  }
+}
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<WebApp />);
