@@ -39,7 +39,8 @@ class Species extends React.Component {
     ];
   }
   showSpecies = (items, index) => {
-    return(<div className="col-lg-3">
+    return(
+    <div className="col-lg-3">
       <div className="card h-100 species-card">
         <img src={items.img} className="card-img-top" alt="Lion" />
         <div className="card-body">
