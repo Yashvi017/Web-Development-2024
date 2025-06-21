@@ -6,7 +6,7 @@
 
 <head>
 
-    <title>Edit Product-Admin Panel</title>
+    <title>Category add-Admin Panel</title>
 
     <!-- App favicon -->
     <!-- <link rel="shortcut icon" href="assets/images/favicon.ico"> -->
@@ -120,10 +120,10 @@
                                     <a class="sub-nav-link" href="product_list-admin.html">List</a>
                                 </li>
                                 <li class="sub-nav-item">
-                                    <a class="sub-nav-link" href="#">Edit</a>
+                                    <a class="sub-nav-link" href="product_edit-admin.html">Edit</a>
                                 </li>
                                 <li class="sub-nav-item">
-                                    <a class="sub-nav-link" href="#">Create</a>
+                                    <a class="sub-nav-link" href="product_add-admin.html">Create</a>
                                 </li>
                             </ul>
                         </div>
@@ -206,87 +206,49 @@
         <div class="page-content">
 
             <!-- Start Container Fluid -->
-            <div class="container-xxl">
-
+            <div class="container-fluid">
                 <div class="row">
-
                     <div class="col-md-12 ">
                         <div class="card">
                             <div class="card-header">
                                 <div class="row w-100 align-items-center">
                                     <div class="col">
-                                        <h4 class="card-title mb-0">Edit Product</h4>
+                                        <h4 class="card-title mb-0">Add Category</h4>
                                     </div>
                                     <div class="col-auto">
-                                        <a href="product_list-admin.html" class="btn btn-light btn-sm">
+                                        <a href="category_list-admin.html" class="btn btn-light btn-sm">
                                             Back
                                         </a>
                                     </div>
                                 </div>
                             </div>
                             <div class="card-body">
-                                <div class="row">
-                                    <div class="col-md-12 col-lg-6">
-                                        <div class="mb-3">
-                                            <label class="form-label d-block">Current Product Image</label>
-                                            <img id="previewImage" src="assets/images/product/p-1.png"
-                                                alt="Current Product Image" class="img-thumbnail mb-2">
+                                <form>
+                                    <div class="row mb-3">
+                                        <div class="col-md-6">
+                                            <label for="categoryName" class="form-label">Category Name</label>
+                                            <input type="text" class="form-control" id="categoryName"
+                                                placeholder="Enter category name" required>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="categoryImage" class="form-label">Category Image</label>
+                                            <input class="form-control" type="file" id="categoryImage" accept="image/*"
+                                                required>
                                         </div>
                                     </div>
-                                    <div class="col-md-12 col-lg-6">
-                                        <form>
-                                            <div class="row mb-3">
-                                                <div class="col-md-6">
-                                                    <label for="productName" class="form-label">Product Name</label>
-                                                    <input type="text" class="form-control" id="productName"
-                                                        value="Men Black Slim Fit T-shirt" required>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <label for="productSize" class="form-label">Size</label>
-                                                    <input type="text" class="form-control" id="productSize" value="M"
-                                                        required>
-                                                </div>
-                                            </div>
 
-                                            <div class="row mb-3">
-                                                <div class="col-md-4">
-                                                    <label for="productPrice" class="form-label">Price (₹)</label>
-                                                    <input type="number" class="form-control" id="productPrice"
-                                                        value="800" required>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <label for="productStock" class="form-label">Stock</label>
-                                                    <input type="number" class="form-control" id="productStock"
-                                                        value="50" required>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <label for="productCategory" class="form-label">Category</label>
-                                                    <select class="form-select" id="productCategory" required>
-                                                        <option value="" disabled>Select category</option>
-                                                        <option value="clothing" selected>Clothing</option>
-                                                        <option value="electronics">Electronics</option>
-                                                        <option value="grocery">Grocery</option>
-                                                        <option value="stationery">Stationery</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-
-                                            <div class="mb-3">
-                                                <label for="productImage" class="form-label">Change Product
-                                                    Image</label>
-                                                <input class="form-control" type="file" id="productImage"
-                                                    accept="image/*">
-                                            </div>
-
-                                        </form>
-
+                                    <div class="mb-3">
+                                        <label for="categoryDescription" class="form-label">Description</label>
+                                        <textarea class="form-control" id="categoryDescription" rows="3"
+                                            placeholder="Enter category description" required></textarea>
                                     </div>
-                                </div>
-                                <div class="col-12 d-flex justify-content-end">
-                                    <button type="reset" class="btn btn-outline-primary">Reset</button>
-                                    &nbsp;&nbsp;
-                                    <button type="submit" class="btn btn-primary">Update Product</button>
-                                </div>
+
+                                    <div class="col-md-12 d-flex justify-content-end">
+                                        <button type="reset" class="btn btn-outline-primary">Clear all</button>
+                                        &nbsp;&nbsp;
+                                        <button type="submit" class="btn btn-primary">Add Category</button>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -308,6 +270,9 @@
             <!-- ========== Footer End ========== -->
 
         </div>
+        <!-- ==================================================== -->
+        <!-- End Page Content -->
+        <!-- ==================================================== -->
 
     </div>
     <!-- END Wrapper -->
