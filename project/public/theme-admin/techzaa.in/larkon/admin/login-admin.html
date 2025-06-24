@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+
+<head>
+    <title>Login-Admin panel</title>
+
+    <!-- Icons css (Require in all Page) -->
+    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- App css (Require in all Page) -->
+    <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Theme Config js (Require in all Page) -->
+    <script src="assets/js/config.js"></script>
+</head>
+
+<body class="h-100">
+    <div class="d-flex flex-column h-100 p-3">
+        <div class="d-flex flex-column flex-grow-1">
+            <div class="row h-100">
+                <div class="col-xxl-7">
+                    <div class="row justify-content-center h-100">
+                        <div class="col-lg-6 py-lg-5">
+                            <div class="d-flex flex-column h-100 justify-content-center">
+                                <div class="auth-logo mb-4">
+                                    <img src="assets/images/logo-dark.png" height="24" alt="logo dark">
+                                </div>
+
+                                <h2 class="fw-bold fs-24 mb-3">Sign In</h2>
+
+                                <form class="authentication-form" action="./dashboard-admin.html">
+                                    <div class="mb-3">
+                                        <label class="form-label" for="example-email">Email</label>
+                                        <input type="email" id="example-email" name="example-email"
+                                            class="form-control bg-" placeholder="Enter your email" required>
+                                    </div>
+                                    <div class="mb-5">
+
+                                        <label class="form-label" for="example-password">Password</label>
+                                        <input type="text" id="example-password" class="form-control"
+                                            placeholder="Enter your password" required>
+                                        <a href="forgot_password-admin.html"
+                                                class="float-end text-muted text-unline-dashed ms-1">Forget
+                                                password?</a>
+
+                                    </div>
+
+                                    <div class="mb-1 text-center d-grid">
+                                        <button class="btn btn-soft-primary" type="submit">Sign In</button>
+                                    </div>
+                                </form>
+                                <p class="text-danger text-center">Don't have an account? <a href="signup-admin.html"
+                                        class="text-dark fw-bold ms-1">Sign Up</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xxl-5 d-none d-xxl-flex">
+                    <div class="card h-100 mb-0 overflow-hidden">
+                        <div class="d-flex flex-column h-100">
+                            <img src="assets/images/small/img-10.jpg" alt="" class="w-100 h-100">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Vendor Javascript (Require in all Page) -->
+    <script src="assets/js/vendor.js"></script>
+
+    <!-- App Javascript (Require in all Page) -->
+    <script src="assets/js/app.js"></script>
+
+</body>
+
+</html>
