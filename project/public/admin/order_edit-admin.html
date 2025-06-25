@@ -182,10 +182,70 @@
             <!-- Start Container Fluid -->
             <div class="container-fluid">
                 <div class="row">
-                    <!--Start the content from here......-->
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="row w-100 align-items-center">
+                                    <div class="col">
+                                        <h4 class="card-title mb-0">Edit Order</h4>
+                                    </div>
+                                    <div class="col-auto">
+                                        <a href="order_list-admin.html" class="btn btn-light btn-sm">
+                                            Back
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <!-- Edit Form Column -->
+                                    <div class="col-md-12">
+                                        <form>
+                                            <div class="mb-3">
+                                                <label for="orderId" class="form-label">Order Number</label>
+                                                <input type="text" class="form-control" id="orderId" value="#ORD12345"
+                                                    readonly>
+                                            </div>
 
+                                            <div class="mb-3">
+                                                <label for="customerName" class="form-label">Customer Name</label>
+                                                <input type="text" class="form-control" id="customerName"
+                                                    value="John Doe" readonly>
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <label for="orderAmount" class="form-label">Order Amount</label>
+                                                <input type="number" class="form-control" id="orderAmount"
+                                                    value="150.75" step="0.01" readonly>
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <label for="orderStatus" class="form-label">Status</label>
+                                                <select class="form-control" id="orderStatus" required>
+                                                    <option value="Pending">Pending</option>
+                                                    <option value="Processing">Processing</option>
+                                                    <option value="Shipped">Shipped</option>
+                                                    <option value="Delivered" selected>Delivered</option>
+                                                    <option value="Cancelled">Cancelled</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <label for="orderDate" class="form-label">Order Date</label>
+                                                <input type="date" class="form-control" id="orderDate"
+                                                    value="2025-06-20" readonly>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 d-flex justify-content-end">
+                                    <button type="submit" class="btn btn-primary">Update Order</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-
             </div>
             <!-- End Container Fluid -->
 
@@ -225,5 +285,8 @@
     <script src="assets/js/pages/dashboard.js"></script>
 
 </body>
+
+
+<!-- Mirrored from techzaa.in/larkon/admin/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 20 Jun 2025 09:02:11 GMT -->
 
 </html>

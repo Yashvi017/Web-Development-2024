@@ -182,7 +182,64 @@
             <!-- Start Container Fluid -->
             <div class="container-fluid">
                 <div class="row">
-                    <!--Start the content from here......-->
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="row w-100 align-items-center">
+                                    <div class="col">
+                                        <h4 class="card-title mb-0">Edit Category</h4>
+                                    </div>
+                                    <div class="col-auto">
+                                        <a href="category_list-admin.html" class="btn btn-light btn-sm">
+                                            Back
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <!-- Image Preview Column -->
+                                    <div class="col-md-12 col-lg-6">
+                                        <div class="mb-3">
+                                            <label class="form-label d-block">Current Category Image</label>
+                                            <img id="previewImage" src="assets/images/product/p-1.png"
+                                                alt="Current Category Image" class="img-thumbnail mb-2">
+                                        </div>
+                                    </div>
+
+                                    <!-- Edit Form Column -->
+                                    <div class="col-md-12 col-lg-6">
+                                        <form>
+                                            <div class="mb-3">
+                                                <label for="categoryName" class="form-label">Category Name</label>
+                                                <input type="text" class="form-control" id="categoryName"
+                                                    value="Fashion" required>
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <label for="categoryDescription" class="form-label">Description</label>
+                                                <textarea class="form-control" id="categoryDescription" rows="3"
+                                                    required>Includes apparel, shoes, and accessories</textarea>
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <label for="categoryImage" class="form-label">Change Category
+                                                    Image</label>
+                                                <input class="form-control" type="file" id="categoryImage"
+                                                    accept="image/*">
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 d-flex justify-content-end">
+                                    <button type="reset" class="btn btn-outline-primary">Reset</button>
+                                    &nbsp;&nbsp;
+                                    <button type="submit" class="btn btn-primary">Update Category</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
 
@@ -225,5 +282,8 @@
     <script src="assets/js/pages/dashboard.js"></script>
 
 </body>
+
+
+<!-- Mirrored from techzaa.in/larkon/admin/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 20 Jun 2025 09:02:11 GMT -->
 
 </html>
