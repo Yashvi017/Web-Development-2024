@@ -22,15 +22,12 @@ export default function MyHeader() {
                                 <div className="dropdown topbar-item">
                                     <a type="button" className="topbar-button" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <span className="d-flex align-items-center">
-                                            <img className="rounded-circle" width={32} src="assets/images/users/avatar-1.jpg" alt="avatar-3" />
+                                            <img className="rounded-circle" width={32} src="/admin/assets/images/users/avatar-1.jpg" alt="avatar-3" />
                                         </span>
                                     </a>
                                     <div className="dropdown-menu dropdown-menu-end">
                                         {/* item*/}
                                         <h6 className="dropdown-header">Welcome Gaston!</h6>
-                                        <a className="dropdown-item" href="pages-profile.html">
-                                            <i className="bx bx-user-circle text-muted fs-18 align-middle me-1" /><span className="align-middle">Profile</span>
-                                        </a>
                                         <div className="dropdown-divider my-1" />
                                         <a className="dropdown-item text-danger" href="auth-signin.html">
                                             <i className="bx bx-log-out fs-18 align-middle me-1" /><span className="align-middle">Logout</span>
@@ -45,7 +42,7 @@ export default function MyHeader() {
                     {/* Sidebar Logo */}
                     <div className="logo-box">
                         <a href="#" className="logo-light">
-                            <img src="assets/images/logo-light.png" className="logo-lg" alt="logo light" />
+                            <img src="/admin/assets/images/logo-light.png" className="logo-lg" alt="logo light" />
                         </a>
                     </div>
                     {/* Menu Toggle Button (sm-hover) */}
