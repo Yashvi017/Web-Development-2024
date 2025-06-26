@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function MyHeader() {
     return (
         <>
@@ -29,9 +31,12 @@ export default function MyHeader() {
                                         {/* item*/}
                                         <h6 className="dropdown-header">Welcome Gaston!</h6>
                                         <div className="dropdown-divider my-1" />
-                                        <a className="dropdown-item text-danger" href="auth-signin.html">
-                                            <i className="bx bx-log-out fs-18 align-middle me-1" /><span className="align-middle">Logout</span>
-                                        </a>
+                                        <Link to="/" className="dropdown-item text-danger">
+                                            <button type="button" className="dropdown-item text-danger border-0 bg-transparent w-100 text-start">
+                                                <i className="bx bx-log-out fs-18 align-middle me-1" />
+                                                <span className="align-middle">Logout</span>
+                                            </button>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
@@ -41,9 +46,13 @@ export default function MyHeader() {
                 <div className="main-nav">
                     {/* Sidebar Logo */}
                     <div className="logo-box">
-                        <a href="#" className="logo-light">
-                            <img src="/admin/assets/images/logo-light.png" className="logo-lg" alt="logo light" />
-                        </a>
+                        <Link to="/dashboard" className="logo-light">
+                            <img
+                                src="/admin/assets/images/logo-light.png"
+                                className="logo-lg"
+                                alt="logo light"
+                            />
+                        </Link>
                     </div>
                     {/* Menu Toggle Button (sm-hover) */}
                     <button type="button" className="button-sm-hover" aria-label="Show Full Sidebar">
@@ -52,12 +61,12 @@ export default function MyHeader() {
                     <div className="scrollbar" data-simplebar>
                         <ul className="navbar-nav" id="navbar-nav">
                             <li className="nav-item">
-                                <a className="nav-link" href="dashboard-admin.html">
+                                <Link to="/dashboard" className="nav-link">
                                     <span className="nav-icon">
                                         <iconify-icon icon="solar:widget-5-bold-duotone" />
                                     </span>
-                                    <span className="nav-text"> Dashboard </span>
-                                </a>
+                                    <span className="nav-text">Dashboard</span>
+                                </Link>
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link menu-arrow" href="#sidebarProducts" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarProducts">
@@ -69,13 +78,13 @@ export default function MyHeader() {
                                 <div className="collapse" id="sidebarProducts">
                                     <ul className="nav sub-navbar-nav">
                                         <li className="sub-nav-item">
-                                            <a className="sub-nav-link" href="product_list-admin.html">List</a>
+                                            <Link to="/product-list" className="sub-nav-link">List</Link>
                                         </li>
                                         <li className="sub-nav-item">
-                                            <a className="sub-nav-link" href="product_edit-admin.html">Edit</a>
+                                            <Link to="/product-edit" className="sub-nav-link">Edit</Link>
                                         </li>
                                         <li className="sub-nav-item">
-                                            <a className="sub-nav-link" href="product_add-admin.html">Create</a>
+                                            <Link to="/product-add" className="sub-nav-link">Create</Link>
                                         </li>
                                     </ul>
                                 </div>
@@ -90,13 +99,13 @@ export default function MyHeader() {
                                 <div className="collapse" id="sidebarCategory">
                                     <ul className="nav sub-navbar-nav">
                                         <li className="sub-nav-item">
-                                            <a className="sub-nav-link" href="category_list-admin.html">List</a>
+                                            <Link to="/category-list" className="sub-nav-link">List</Link>
                                         </li>
                                         <li className="sub-nav-item">
-                                            <a className="sub-nav-link" href="category_edit-admin.html">Edit</a>
+                                            <Link to="/category-edit" className="sub-nav-link">Edit</Link>
                                         </li>
                                         <li className="sub-nav-item">
-                                            <a className="sub-nav-link" href="category_add-admin.html">Create</a>
+                                            <Link to="/category-add" className="sub-nav-link">Create</Link>
                                         </li>
                                     </ul>
                                 </div>
@@ -111,10 +120,10 @@ export default function MyHeader() {
                                 <div className="collapse" id="sidebarOrders">
                                     <ul className="nav sub-navbar-nav">
                                         <li className="sub-nav-item">
-                                            <a className="sub-nav-link" href="order_list-admin.html">List</a>
+                                            <Link to="/order-list" className="sub-nav-link">List</Link>
                                         </li>
                                         <li className="sub-nav-item">
-                                            <a className="sub-nav-link" href="order_edit-admin.html">Edit</a>
+                                            <Link to="/order-edit" className="sub-nav-link">Edit</Link>
                                         </li>
                                     </ul>
                                 </div>

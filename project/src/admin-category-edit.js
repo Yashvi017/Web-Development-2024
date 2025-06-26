@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import MyHeader from "./admin-myheader";
 import MyFooter from "./admin-myfooter";
 
@@ -17,9 +18,9 @@ export default function AdminCategoryEdit() {
                                             <h4 className="card-title mb-0">Edit Category</h4>
                                         </div>
                                         <div className="col-auto">
-                                            <a href="category_list-admin.html" className="btn btn-light btn-sm">
+                                            <Link to="/category-list" className="btn btn-light btn-sm">
                                                 Back
-                                            </a>
+                                            </Link>
                                         </div>
                                     </div>
                                 </div>

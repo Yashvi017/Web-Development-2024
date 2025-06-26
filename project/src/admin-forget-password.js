@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function AdminForgetPassword() {
     return (
         <div className="d-flex flex-column h-100 p-3">
@@ -21,7 +23,7 @@ export default function AdminForgetPassword() {
                                             <div className="mb-3 text-center d-grid">
                                                 <button className="btn btn-primary" type="submit">Reset Password</button>
                                             </div>
-                                            <p className="text-danger text-center">Back to<a href="login-admin.html" className="text-dark fw-bold ms-1">Sign In</a></p>
+                                            <p className="text-danger text-center">Back to<Link to="/" className="text-dark fw-bold ms-1">Sign In</Link></p>
                                         </form>
                                     </div>
                                 </div>

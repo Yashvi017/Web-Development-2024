@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Login() {
     return (
         <div className="d-flex flex-column h-100 p-3">
@@ -19,14 +21,15 @@ export default function Login() {
                                         <div className="mb-5">
                                             <label className="form-label" htmlFor="example-password">Password</label>
                                             <input type="text" id="example-password" className="form-control" placeholder="Enter your password" required />
-                                            <a href="forgot_password-admin.html" className="float-end text-muted text-unline-dashed ms-1">Forget
-                                                password?</a>
+                                            <Link to="/forget-password" className="float-end text-muted text-unline-dashed ms-1">
+                                                Forget password?
+                                            </Link>
                                         </div>
                                         <div className="mb-1 text-center d-grid">
                                             <button className="btn btn-soft-primary" type="submit">Sign In</button>
                                         </div>
                                     </form>
-                                    <p className="text-danger text-center">Don't have an account? <a href="signup-admin.html" className="text-dark fw-bold ms-1">Sign Up</a></p>
+                                    <p className="text-danger text-center">Don't have an account? <Link to="/signup" className="text-dark fw-bold ms-1">Sign Up</Link></p>
                                 </div>
                             </div>
                         </div>

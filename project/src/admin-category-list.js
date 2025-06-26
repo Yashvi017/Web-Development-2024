@@ -1,10 +1,11 @@
+import { Link } from "react-router-dom";
 import MyHeader from "./admin-myheader";
 import MyFooter from "./admin-myfooter";
 
 export default function AdminCategoryList() {
     return (
         <div className="wrapper">
-            <MyHeader/>
+            <MyHeader />
             <div className="page-content">
                 {/* Start Container Fluid */}
                 <div className="container-fluid">
@@ -13,9 +14,12 @@ export default function AdminCategoryList() {
                             <div className="card">
                                 <div className="card-header d-flex justify-content-between align-items-center gap-1">
                                     <h4 className="card-title flex-grow-1">Category List</h4>
-                                    <a href="category_add-admin.html" className="btn btn-sm btn-primary">
-                                        Add Category
-                                    </a>
+                                    <Link to="/category-add">
+                                        <button className="btn btn-sm btn-primary">
+                                            Add Category
+                                        </button>
+                                    </Link>
+
                                 </div>
                                 <div>
                                     <div className="table-responsive">
@@ -35,12 +39,22 @@ export default function AdminCategoryList() {
                                                     <td>120</td>
                                                     <td>
                                                         <div className="d-flex gap-2">
-                                                            <a href="#" className="btn btn-light btn-sm">
+                                                            {/* <a href="#" className="btn btn-light btn-sm">
                                                                 <iconify-icon icon="solar:eye-broken" className="align-middle fs-18" />
                                                             </a>
                                                             <a href="category_edit-admin.html" className="btn btn-soft-primary btn-sm">
                                                                 <iconify-icon icon="solar:pen-2-broken" className="align-middle fs-18" />
-                                                            </a>
+                                                            </a> */}
+                                                            <Link to="#">
+                                                                <button className="btn btn-light btn-sm">
+                                                                    <iconify-icon icon="solar:eye-broken" className="align-middle fs-18" />
+                                                                </button>
+                                                            </Link>
+                                                            <Link to="/category-edit">
+                                                                <button className="btn btn-soft-primary btn-sm">
+                                                                    <iconify-icon icon="solar:pen-2-broken" className="align-middle fs-18" />
+                                                                </button>
+                                                            </Link>
                                                             <button type="button" className="btn btn-soft-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteModal">
                                                                 <iconify-icon icon="solar:trash-bin-minimalistic-2-broken" className="align-middle fs-18" />
                                                             </button>
@@ -88,7 +102,7 @@ export default function AdminCategoryList() {
                     </div>
                 </div>
                 {/* ========== Footer Start ========== */}
-                <MyFooter/>
+                <MyFooter />
                 {/* ========== Footer End ========== */}
             </div>
             {/* ==================================================== */}
