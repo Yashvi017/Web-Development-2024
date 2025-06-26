@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function AdminSignup() {
     return (
         <div className="d-flex flex-column h-100 p-3">
@@ -35,7 +37,9 @@ export default function AdminSignup() {
                                             <div className="mb-3 text-center d-grid">
                                                 <button className="btn btn-soft-primary" type="submit">Sign Up</button>
                                             </div>
-                                            <p className="mt-auto text-danger text-center">I already have an account <a href="./login-admin.html" className="text-dark fw-bold ms-1">Sign In</a></p>
+                                            <p className="mt-auto text-danger text-center">I already have an account <Link to="/" className="text-dark fw-bold ms-1">
+                                                Sign In
+                                            </Link></p>
                                         </form>
                                     </div>
                                 </div>

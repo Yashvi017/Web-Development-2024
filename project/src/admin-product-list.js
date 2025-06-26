@@ -1,10 +1,11 @@
+import { Link } from "react-router-dom";
 import MyHeader from "./admin-myheader";
 import MyFooter from "./admin-myfooter";
 
 export default function AdminProductList() {
     return (
         <div className="wrapper">
-            <MyHeader/>
+            <MyHeader />
             <div className="page-content">
                 {/* Start Container Fluid */}
                 <div className="container-fluid">
@@ -13,9 +14,11 @@ export default function AdminProductList() {
                             <div className="card">
                                 <div className="card-header d-flex justify-content-between align-items-center gap-1">
                                     <h4 className="card-title flex-grow-1">All Product List</h4>
-                                    <a href="product_add-admin.html" className="btn btn-sm btn-primary">
-                                        Add Product
-                                    </a>
+                                    <Link to="/product-add">
+                                        <button type="button" className="btn btn-sm btn-primary">
+                                            Add Product
+                                        </button>
+                                    </Link>
                                 </div>
                                 <div>
                                     <div className="table-responsive">
@@ -37,8 +40,8 @@ export default function AdminProductList() {
                                                                 <img src="/admin/assets/images/product/p-1.png" alt className="avatar-md" />
                                                             </div>
                                                             <div>
-                                                                <a href="#!" className="text-dark fw-medium fs-15">Black
-                                                                    T-shirt</a>
+                                                                <span className="text-dark fw-medium fs-15">Black
+                                                                    T-shirt</span>
                                                                 <p className="text-muted mb-0 mt-1 fs-13">
                                                                     <span>Size : </span>S , M , L , Xl
                                                                 </p>
@@ -48,18 +51,33 @@ export default function AdminProductList() {
                                                     <td>$80.00</td>
                                                     <td>
                                                         <p className="mb-1 text-muted"><span className="text-dark fw-medium">486 Item</span>
-                                                            </p>
+                                                        </p>
                                                         <p className="mb-0 text-muted">155 Sold</p>
                                                     </td>
                                                     <td> Fashion</td>
                                                     <td>
                                                         <div className="d-flex gap-2">
-                                                            <a href="#" className="btn btn-light btn-sm">
+                                                            {/* <a href="#" className="btn btn-light btn-sm">
                                                                 <iconify-icon icon="solar:eye-broken" className="align-middle fs-18" />
                                                             </a>
                                                             <a href="product_edit-admin.html" className="btn btn-soft-primary btn-sm">
                                                                 <iconify-icon icon="solar:pen-2-broken" className="align-middle fs-18" />
-                                                            </a>
+                                                            </a> */}
+                                                            <div className="d-flex gap-2">
+                                                                {/* View button (non-navigational placeholder — update `to` if needed) */}
+                                                                <Link to="#">
+                                                                    <button type="button" className="btn btn-light btn-sm">
+                                                                        <iconify-icon icon="solar:eye-broken" className="align-middle fs-18" />
+                                                                    </button>
+                                                                </Link>
+
+                                                                {/* Edit product button */}
+                                                                <Link to="/product-edit">
+                                                                    <button type="button" className="btn btn-soft-primary btn-sm">
+                                                                        <iconify-icon icon="solar:pen-2-broken" className="align-middle fs-18" />
+                                                                    </button>
+                                                                </Link>
+                                                            </div>
                                                             <button type="button" className="btn btn-soft-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteProductModal">
                                                                 <iconify-icon icon="solar:trash-bin-minimalistic-2-broken" className="align-middle fs-18" />
                                                             </button>
@@ -107,7 +125,7 @@ export default function AdminProductList() {
                     </div>
                 </div>
                 {/* ========== Footer Start ========== */}
-                <MyFooter/>
+                <MyFooter />
                 {/* ========== Footer End ========== */}
             </div>
             {/* ==================================================== */}
