@@ -1,0 +1,22 @@
+HTTrack3.49-2+htsswf+htsjava launched on Thu, 03 Jul 2025 16:48:02 at https://gramentheme.com/html/addina/index.html +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar
+(winhttrack -qwC2%Ps2u1%s%uN0%I0p3DaK0H0%kf2A25000%f#f -F "Mozilla/4.5 (compatible; HTTrack 3.0x; Windows 98)" -%F "<!-- Mirrored from %s%s by HTTrack Website Copier/3.x [XR&CO'2014], %s -->" -%l "en, *" https://gramentheme.com/html/addina/index.html -O1 "D:\Yashvi\admin\shop-user" +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+16:50:00	Error: 	"Not Found" (404) at link https://gramentheme.com/html/addina/assets/fonts/fa-duotone-900.woff2 (from https://gramentheme.com/html/addina/assets/css/fontawesome-pro.css)
+16:50:00	Error: 	"Not Found" (404) at link https://gramentheme.com/html/addina/assets/fonts/fa-duotone-900.ttf (from https://gramentheme.com/html/addina/assets/css/fontawesome-pro.css)
+16:50:01	Error: 	"Not Found" (404) at link https://gramentheme.com/html/addina/pharmacy-pharmacy-product.html (from https://gramentheme.com/html/addina/pharmacy.html)
+16:50:01	Error: 	"Not Found" (404) at link https://gramentheme.com/html/addina/service.html (from https://gramentheme.com/html/addina/pharmacy.html)
+16:50:01	Error: 	"Not Found" (404) at link https://gramentheme.com/html/addina/appointment.html (from https://gramentheme.com/html/addina/pharmacy.html)
+16:50:01	Error: 	"Not Found" (404) at link https://gramentheme.com/html/addina/project-details.html (from https://gramentheme.com/html/addina/pharmacy.html)
+16:50:01	Error: 	"Not Found" (404) at link https://gramentheme.com/html/addina/home-startup.html (from https://gramentheme.com/html/addina/pharmacy.html)
+16:50:01	Error: 	"Not Found" (404) at link https://gramentheme.com/html/addina/services.html (from https://gramentheme.com/html/addina/pharmacy.html)
+16:50:01	Error: 	"Not Found" (404) at link https://gramentheme.com/html/addina/portfolio-2.html (from https://gramentheme.com/html/addina/pharmacy.html)
+16:50:04	Error: 	"Not Found" (404) at link https://gramentheme.com/html/addina/grocery-grocery-product.html (from https://gramentheme.com/html/addina/grocery.html)
+16:50:04	Error: 	"Not Found" (404) at link https://gramentheme.com/html/addina/dashboard.html (from https://gramentheme.com/html/addina/portfolio.html)
+
+HTTrack Website Copier/3.49-2 mirror complete in 2 minutes 2 seconds : 250 links scanned, 238 files written (33639057 bytes overall) [27728975 bytes received at 227286 bytes/sec], 9156672 bytes transferred using HTTP compression in 76 files, ratio 28%, 13.1 requests per connection
+(11 errors, 0 warnings, 0 messages)
