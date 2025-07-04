@@ -40,9 +40,6 @@ export default function AdminOrderList() {
                                                             <a href="#" className="btn btn-light btn-sm">
                                                                 <iconify-icon icon="solar:eye-broken" className="align-middle fs-18" />
                                                             </a>
-                                                            <a href="order_edit-admin.html" className="btn btn-soft-primary btn-sm">
-                                                                <iconify-icon icon="solar:pen-2-broken" className="align-middle fs-18" />
-                                                            </a>
                                                         </div>
                                                     </td>
                                                 </tr>

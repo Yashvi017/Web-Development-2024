@@ -26,30 +26,25 @@ export default function AdminCategoryList() {
                                         <table className="table align-middle mb-0 table-hover table-centered">
                                             <thead className="bg-light-subtle">
                                                 <tr>
-                                                    <th>Category Name</th>
-                                                    <th>Description</th>
-                                                    <th>Total Products</th>
+                                                    <th>ID</th>
+                                                    <th>Title</th>
+                                                    <th>Photo</th>
+                                                    <th>Detail</th>
+                                                    <th>Is live</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <tr>
-                                                    <td>Fashion</td>
-                                                    <td>Includes apparel, shoes, and accessories</td>
-                                                    <td>120</td>
+                                                    <td>1</td>
+                                                    <td>Phone</td>
+                                                    <td>
+                                                        <img src="https://picsum.photos/100"/>
+                                                    </td>
+                                                    <td>Lorem ipsum</td>
+                                                    <td>Yes</td>
                                                     <td>
                                                         <div className="d-flex gap-2">
-                                                            {/* <a href="#" className="btn btn-light btn-sm">
-                                                                <iconify-icon icon="solar:eye-broken" className="align-middle fs-18" />
-                                                            </a>
-                                                            <a href="category_edit-admin.html" className="btn btn-soft-primary btn-sm">
-                                                                <iconify-icon icon="solar:pen-2-broken" className="align-middle fs-18" />
-                                                            </a> */}
-                                                            <Link to="#">
-                                                                <button className="btn btn-light btn-sm">
-                                                                    <iconify-icon icon="solar:eye-broken" className="align-middle fs-18" />
-                                                                </button>
-                                                            </Link>
                                                             <Link to="/category-edit">
                                                                 <button className="btn btn-soft-primary btn-sm">
                                                                     <iconify-icon icon="solar:pen-2-broken" className="align-middle fs-18" />
