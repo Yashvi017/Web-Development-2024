@@ -13,7 +13,7 @@ export default function AdminProductList() {
                         <div className="col-xl-12">
                             <div className="card">
                                 <div className="card-header d-flex justify-content-between align-items-center gap-1">
-                                    <h4 className="card-title flex-grow-1">All Product List</h4>
+                                    <h4 className="card-title flex-grow-1">Product Management</h4>
                                     <Link to="/product-add">
                                         <button type="button" className="btn btn-sm btn-primary">
                                             Add Product
@@ -31,30 +31,32 @@ export default function AdminProductList() {
                                                     <th>Category</th>
                                                     <th>Action</th>
                                                 </tr>
+                                                <tr>
+                                                    <th>Sr No</th>
+                                                    <th>Name</th>
+                                                    <th>Photo</th>
+                                                    <th>Price</th>
+                                                    <th>Stock</th>
+                                                    <th>Is Live</th>
+                                                    <th>Action</th>
+                                                </tr>
                                             </thead>
                                             <tbody>
                                                 <tr>
+                                                    <td>1</td>
+                                                    <td>Black T-shirt</td>
                                                     <td>
                                                         <div className="d-flex align-items-center gap-2">
                                                             <div className="rounded bg-light avatar-md d-flex align-items-center justify-content-center">
                                                                 <img src="/admin/assets/images/product/p-1.png" alt className="avatar-md" />
                                                             </div>
-                                                            <div>
-                                                                <span className="text-dark fw-medium fs-15">Black
-                                                                    T-shirt</span>
-                                                                <p className="text-muted mb-0 mt-1 fs-13">
-                                                                    <span>Size : </span>S , M , L , Xl
-                                                                </p>
-                                                            </div>
                                                         </div>
                                                     </td>
                                                     <td>$80.00</td>
                                                     <td>
-                                                        <p className="mb-1 text-muted"><span className="text-dark fw-medium">486 Item</span>
-                                                        </p>
-                                                        <p className="mb-0 text-muted">155 Sold</p>
+                                                        486
                                                     </td>
-                                                    <td> Fashion</td>
+                                                    <td> Yes</td>
                                                     <td>
                                                         <div className="d-flex gap-2">
                                                             {/* <a href="#" className="btn btn-light btn-sm">

@@ -13,7 +13,7 @@ export default function Login() {
                                         <img src="/admin/assets/images/logo-dark.png" height={24} alt="logo dark" />
                                     </div>
                                     <h2 className="fw-bold fs-24 mb-3">Sign In</h2>
-                                    <form className="authentication-form" action="./dashboard-admin.html">
+                                    <form className="authentication-form" action="./dashboard">
                                         <div className="mb-3">
                                             <label className="form-label" htmlFor="example-email">Email</label>
                                             <input type="email" id="example-email" name="example-email" className="form-control bg-" placeholder="Enter your email" required />
