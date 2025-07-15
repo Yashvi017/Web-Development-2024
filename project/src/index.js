@@ -14,7 +14,7 @@ import AdminCategoryList from './admin-category-list';
 import AdminCategoryAdd from './admin-category-add';
 import AdminCategoryEdit from './admin-category-edit';
 import AdminOrderList from './admin-order-list';
-import AdminOrderEdit from './admin-order-edit';
+import AdminOrderView from './admin-order-view';
 import AdminComposeEmail from './admin-compose-email';
 
 
@@ -35,7 +35,7 @@ function MyRouter(){
         <Route path='/category-add' element={<AdminCategoryAdd/>}/>
         <Route path='/category-edit' element={<AdminCategoryEdit/>}/>
         <Route path='/order-list' element={<AdminOrderList/>}/>
-        <Route path='/order-edit' element={<AdminOrderEdit/>}/>
+        <Route path='/order-view' element={<AdminOrderView/>}/>
         <Route path='/compose-email' element={<AdminComposeEmail/>}/>
       </Routes>
     </BrowserRouter>
