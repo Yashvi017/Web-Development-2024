@@ -14,20 +14,27 @@ export default function AdminProductView() {
                             <div className="card">
                                 <div className="card-header d-flex justify-content-between align-items-center gap-1">
                                     <h4 className="card-title flex-grow-1">Product Management</h4>
-                                    <a href="product_list-admin.html" className="btn btn-sm btn-primary">
+                                    <Link to="/product-list" className="btn btn-light btn-sm">
                                         Back
-                                    </a>
+                                    </Link>
                                 </div>
                                 <div className="card-body">
                                     <div className="row">
                                         {/* Left Column: Image + Buttons */}
                                         <div className="col-md-5 mb-4">
                                             <div className="card">
-                                                <img src="./assets/images/product/p-1.png" className="card-img-top" alt="Product Image" />
-                                                <div className="card-body text-center">
-                                                    <a href="#" className="btn btn-primary btn-block me-2">Edit</a>
-                                                    <a href="#" className="btn btn-danger btn-block">Delete</a>
-                                                </div>
+                                                <img src="./admin/assets/images/product/p-1.png" className="card-img-top" alt="Product Image" />
+                                                {/* <div className="card-body text-center">
+                                                    <Link to="/product-edit">
+                                                        <button type="button" className="btn btn-soft-primary btn-sm">
+                                                            <iconify-icon icon="solar:pen-2-broken" className="align-middle fs-18" />
+                                                        </button>
+                                                    </Link>
+                                                    &nbsp;&nbsp;
+                                                    <button type="button" className="btn btn-soft-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteProductModal">
+                                                        <iconify-icon icon="solar:trash-bin-minimalistic-2-broken" className="align-middle fs-18" />
+                                                    </button>
+                                                </div> */}
                                             </div>
                                         </div>
                                         {/* Right Column: Product Details Table */}

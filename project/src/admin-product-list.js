@@ -25,13 +25,6 @@ export default function AdminProductList() {
                                         <table className="table align-middle mb-0 table-hover table-centered">
                                             <thead className="bg-light-subtle">
                                                 <tr>
-                                                    <th>Product Name &amp; Size</th>
-                                                    <th>Price</th>
-                                                    <th>Stock</th>
-                                                    <th>Category</th>
-                                                    <th>Action</th>
-                                                </tr>
-                                                <tr>
                                                     <th>Sr No</th>
                                                     <th>Name</th>
                                                     <th>Photo</th>
@@ -67,7 +60,7 @@ export default function AdminProductList() {
                                                             </a> */}
                                                             <div className="d-flex gap-2">
                                                                 {/* View button (non-navigational placeholder — update `to` if needed) */}
-                                                                <Link to="#">
+                                                                <Link to="/product-view">
                                                                     <button type="button" className="btn btn-light btn-sm">
                                                                         <iconify-icon icon="solar:eye-broken" className="align-middle fs-18" />
                                                                     </button>
