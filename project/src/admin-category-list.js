@@ -27,9 +27,8 @@ export default function AdminCategoryList() {
                                             <thead className="bg-light-subtle">
                                                 <tr>
                                                     <th>ID</th>
-                                                    <th>Title</th>
+                                                    <th>Name</th>
                                                     <th>Photo</th>
-                                                    <th>Detail</th>
                                                     <th>Is live</th>
                                                     <th>Action</th>
                                                 </tr>
@@ -41,7 +40,6 @@ export default function AdminCategoryList() {
                                                     <td>
                                                         <img src="https://picsum.photos/100"/>
                                                     </td>
-                                                    <td>Lorem ipsum</td>
                                                     <td>Yes</td>
                                                     <td>
                                                         <div className="d-flex gap-2">

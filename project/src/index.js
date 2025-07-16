@@ -17,7 +17,7 @@ import AdminOrderList from './admin-order-list';
 import AdminOrderView from './admin-order-view';
 import AdminComposeEmail from './admin-compose-email';
 
-
+// Orders, Users, Produccts, Categories, change AdminForgetPassword, logout
 const root = ReactDOM.createRoot(document.getElementById('root'));
 function MyRouter(){
   return(

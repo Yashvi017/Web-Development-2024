@@ -5,7 +5,7 @@ import MyFooter from "./admin-myfooter";
 export default function AdminCategoryEdit() {
     return (
         <div className="wrapper">
-            <MyHeader/>
+            <MyHeader />
             <div className="page-content">
                 {/* Start Container Fluid */}
                 <div className="container-fluid">
@@ -36,19 +36,37 @@ export default function AdminCategoryEdit() {
                                         {/* Edit Form Column */}
                                         <div className="col-md-12 col-lg-6">
                                             <form>
-                                                <div className="mb-3">
-                                                    <label htmlFor="categoryName" className="form-label">Category Name</label>
-                                                    <input type="text" className="form-control" id="categoryName" defaultValue="Fashion" required />
+                                                <div className="row mb-3">
+                                                    <div className="col-md-6">
+                                                        <label htmlFor="categoryName" className="form-label">Name</label>
+                                                        <input type="text" className="form-control" id="categoryName" value="Electronics" required />
+                                                    </div>
+                                                    <div className="col-md-6">
+                                                        <label htmlFor="categoryImage" className="form-label">Photo</label>
+                                                        <input className="form-control" type="file" id="categoryImage" accept="image/*" required />
+                                                    </div>
+                                                    <div className="col-md-6 mt-3">
+                                                        <label htmlFor="categoryIsLive" className="form-label">IsLive</label>
+                                                        {/* <select className="form-select" id="categoryIsLive" required>
+                                                    <option value="" disabled selected>Select an option</option>
+                                                    <option value="yes">Yes</option>
+                                                    <option value="no">No</option>
+                                                </select> */}
+                                                        <div class="form-check">
+                                                            <input className="form-check-input" type="radio" name="isLive" id="isLiveYes" value="yes" />
+                                                            <label className="form-check-label" for="isLiveYes">Yes</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" name="isLive" id="isLiveNo" value="no" />
+                                                            <label class="form-check-label" for="isLiveNo">No</label>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                                <div className="mb-3">
-                                                    <label htmlFor="categoryDescription" className="form-label">Description</label>
-                                                    <textarea className="form-control" id="categoryDescription" rows={3} required defaultValue={"Includes apparel, shoes, and accessories"} />
-                                                </div>
-                                                <div className="mb-3">
-                                                    <label htmlFor="categoryImage" className="form-label">Change Category
-                                                        Image</label>
-                                                    <input className="form-control" type="file" id="categoryImage" accept="image/*" />
-                                                </div>
+                                                {/* <div className="mb-3">
+                                            <label htmlFor="categoryDescription" className="form-label">Description</label>
+                                            <textarea className="form-control" id="categoryDescription" rows={3} placeholder="Enter category description" required defaultValue={""} />
+                                        </div> */}
+                                                
                                             </form>
                                         </div>
                                     </div>
@@ -64,7 +82,7 @@ export default function AdminCategoryEdit() {
                 </div>
                 {/* End Container Fluid */}
                 {/* ========== Footer Start ========== */}
-                <MyFooter/>
+                <MyFooter />
                 {/* ========== Footer End ========== */}
             </div>
             {/* ==================================================== */}
